@@ -1,4 +1,4 @@
-# open-cli-copilot
+# open-cli-copilot (Ollama support)
 
 _Copilot-like autosuggestions generation for zsh._
 
