@@ -12,7 +12,7 @@ https://github.com/user-attachments/assets/807711b1-5980-4e39-9902-27d7792fe2e2
 1. Clone project repository to the location of choice:
 
     ```sh
-    git clone https://github.com/OskarSzafer/open-cli-copilot.git
+    git clone https://github.com/lbltavares/open-cli-copilot-ollama.git
     ```
 
 2. Inside the project repository create python ```venv``` and install requirements:
@@ -21,17 +21,15 @@ https://github.com/user-attachments/assets/807711b1-5980-4e39-9902-27d7792fe2e2
     python -m venv venv && ./venv/bin/pip install -r requirements.txt
     ```
 
-3. Source main script, and export API-key by adding to ```~/.zshrc``` following lines:
+3. Source main script by adding to ```~/.zshrc``` the following line:
 
     ```sh
-    export GOOGLE_API_KEY=<your_token>
     source ~/path/to/open-cli-copilot/copilot.zsh
     ```
 
-    _You can get your API-key from: https://aistudio.google.com/app/apikey_
-
 4. Start a new terminal session.
 
+Note: Export `LLAMA_MODEL` environment variable to set desired ollama model (default is llama3.1).
 
 ## Requirements
 
