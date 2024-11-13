@@ -1,1 +1,1 @@
-google-generativeai
+ollama==0.3.3
