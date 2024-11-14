@@ -9,7 +9,7 @@ update_context() {
     print -r "$BUFFER" > $CONTEXT_FILE
     pwd >> $CONTEXT_FILE
     print -r "$his" >> $CONTEXT_FILE
-    ls >> $CONTEXT_FILE
+    ls -p >> $CONTEXT_FILE
 }
 
 # Update the context file with current line buffer

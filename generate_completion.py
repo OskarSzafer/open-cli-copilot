@@ -30,7 +30,7 @@ Last commands entered:
 
 Current directory: {current_directory}
 
-Output of the "ls" command:
+Output of the "ls -p" command:
 {ls_output}
 
 Current prompt: {current_prompt}
