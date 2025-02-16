@@ -4,7 +4,7 @@ import time
 from pathlib import Path
 from datetime import datetime
 
-import ollama
+import google.generativeai as genai
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -16,7 +16,8 @@ tmp_files_dir_path = Path(TMP_FILES_DIR)
 MIN_IDLE_TIME = 0.3
 CHECK_INTERVAL = 0.1
 
-model = os.getenv("LLAMA_MODEL", "llama3.1")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 prompt_template = """
 You are command line copilot.
@@ -67,12 +68,12 @@ def serve_terminal_session(context_file_path, option_file_path):
         if not prompt:
             return
 
-        response = ollama.chat(
-            model=model, messages=[{"role": "user", "content": prompt}]
-        )
+        chat = model.start_chat(history=[])
+        response = chat.send_message(prompt)
+        completion = response.text.strip()
 
         with open(option_file_path, "w") as file:
-            file.write(response["message"]["content"])
+            file.write(completion)
 
 
 def handle_tmp_files(directory):
@@ -101,3 +102,4 @@ def watch_files():
 
 if __name__ == "__main__":
     watch_files()
+    
