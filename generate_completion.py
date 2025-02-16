@@ -21,14 +21,20 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 prompt_template = """
 You are command line copilot.
-Use this command line history to better understand the user's expectations:
+Propose how current prompt should be completed, return completed command line prompt alone with no explanation.
+For example, if the current prompt is "ls", you can return "ls -l" or "ls -a" or "ls -l -a" etc.
+
+To better contextualize you, here are some useful information:
+
+Last commands entered:
 {command_history}
-Use this output of the 'ls' commnad to better fit generated completion:
+
+Current directory: {current_directory}
+
+Output of the "ls -p" command:
 {ls_output}
-Current working directory: {current_directory}
-Current command line prompt: {current_prompt}
-Propose how current prompt should be completed,
-return completed command line prompt aleone with no explanation.
+
+Current prompt: {current_prompt}
 """
 
 
@@ -96,3 +102,4 @@ def watch_files():
 
 if __name__ == "__main__":
     watch_files()
+    
