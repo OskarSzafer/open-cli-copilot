@@ -77,7 +77,11 @@ def serve_terminal_session(context_file_path, option_file_path):
 
 
 def handle_tmp_files(directory):
-    for f in tmp_files_dir_path.glob("*.context*"):
+    context_files = list(tmp_files_dir_path.glob("*.context*"))
+    if not context_files:
+        sys.exit(1)
+
+    for f in context_files:
         context_file_path = os.path.join(directory, f.name)
 
         for option_f in tmp_files_dir_path.glob(
@@ -95,11 +99,8 @@ def handle_tmp_files(directory):
 def watch_files():
     while True:
         handle_tmp_files(TMP_FILES_DIR)
-
-        # Limit frequency of checking for chenges
         time.sleep(CHECK_INTERVAL)
 
 
 if __name__ == "__main__":
     watch_files()
-    
