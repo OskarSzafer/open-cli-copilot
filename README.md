@@ -42,6 +42,6 @@ https://github.com/user-attachments/assets/807711b1-5980-4e39-9902-27d7792fe2e2
 
 ## Roadmap
 
-- Improve handling of special characters in buffer
-- Resolve conflicts with the zsh history widget
-- Integrate with open-source LLMs using Hugging Face Transformers
+- [x] Improve handling of special characters in buffer
+- [ ] Resolve conflicts with the zsh history widget
+- [ ] Integrate with open-source LLMs using Hugging Face Transformers
