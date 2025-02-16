@@ -9,26 +9,26 @@ https://github.com/user-attachments/assets/807711b1-5980-4e39-9902-27d7792fe2e2
 ## Installation
 
 
-1. Clone project repository to the location of choice:
+1. Clone the project repository to a location of your choice:
 
     ```sh
     git clone https://github.com/OskarSzafer/open-cli-copilot.git
     ```
 
-2. Inside the project repository create python ```venv``` and install requirements:
+2. Inside the project repository, create a Python ```venv``` and install requirements:
 
     ```sh
     python -m venv venv && ./venv/bin/pip install -r requirements.txt
     ```
 
-3. Source main script, and export API-key by adding to ```~/.zshrc``` following lines:
+3. Source the main script and export your API-key by adding the following lines to ```~/.zshrc```:
 
     ```sh
     export GOOGLE_API_KEY=<your_token>
     source ~/path/to/open-cli-copilot/copilot.zsh
     ```
 
-    _You can get your API-key from: https://aistudio.google.com/app/apikey_
+    *You can obtain your API key from: [Google AI Studio](https://aistudio.google.com/app/apikey)*
 
 4. Start a new terminal session.
 
@@ -45,3 +45,15 @@ https://github.com/user-attachments/assets/807711b1-5980-4e39-9902-27d7792fe2e2
 - [x] Improve handling of special characters in buffer
 - [ ] Resolve conflicts with the zsh history widget
 - [ ] Integrate with open-source LLMs using Hugging Face Transformers
+
+
+## Acknowledgements
+
+Thanks to all contributors for their help in making open-cli-copilot better!
+
+Your contributions are greatly appreciated! 🙌
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
