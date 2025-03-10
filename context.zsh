@@ -14,7 +14,7 @@ update_context() {
 
 # Update the context file with current line buffer
 update_context_buffer() {
-    sed -i "1s|.*|$(_zsh_autosuggest_escape_command "${BUFFER:-}")|" "$CONTEXT_FILE"
+    sed -i '' "1s|.*|$(_zsh_autosuggest_escape_command "${BUFFER:-}")|" "$CONTEXT_FILE"
     #sed -i "1s/.*/$(printf "%s" "${BUFFER:-}" | sed 's/[\/&]/\\&/g')/" "$CONTEXT_FILE"
 }
 
